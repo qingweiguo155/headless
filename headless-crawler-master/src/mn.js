@@ -5,8 +5,8 @@ const srcToImg = require('./helper/srcToImg');
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('https://image.baidu.com/');
-  console.log('go to https://image.baidu.com/');
+  await page.goto('https://images.baidu.com/');
+  console.log('go to https://images.baidu.com/');
 
   await page.setViewport({
     width: 1920,
@@ -16,7 +16,7 @@ const srcToImg = require('./helper/srcToImg');
 
   await page.focus('#kw');
   await page.keyboard.sendCharacter('狗');
-  await page.click('.s_btn');
+  await page.click('.s_search');
   console.log('go to search list');
 
   page.on('load', async () => {
